@@ -18,7 +18,8 @@ public class FileSelectorTest {
     @Before
     public void setUp() throws Exception {
         fileSelector = new FileSelector(App.weatherCSV, new CSVWeatherParser(), new MinTempSpread());
-        result = new WeatherEntry("14");
+
+        result = new WeatherEntry("14",61,59,60,55.9,0,60,6.7,80,9,10,93,87,1008.6);
     }
 
     @Test
