@@ -26,7 +26,7 @@ public class MinGoalDifferenceTest {
 
     @Test
     public void compare() {
-        Assert.assertTrue(minGoalDifferenceComp.compare(footballEntryA, footballEntryB) > 0);
+        Assert.assertTrue(minGoalDifferenceComp.compare(footballEntryA, footballEntryB) < 0);
         footballEntryA.setGoalsAllowed(78);
         Assert.assertTrue(minGoalDifferenceComp.compare(footballEntryA, footballEntryB) > 0);
         footballEntryB.setGoalsAllowed(50);

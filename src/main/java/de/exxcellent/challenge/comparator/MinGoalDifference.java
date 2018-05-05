@@ -12,6 +12,6 @@ public class MinGoalDifference implements Comparator<FootballEntry> {
 
     @Override
     public int compare(FootballEntry o1, FootballEntry o2) {
-        return 0;
+        return Math.abs(o2.getGoals() - o2.getGoalsAllowed()) - Math.abs(o1.getGoals() - o1.getGoalsAllowed());
     }
 }
