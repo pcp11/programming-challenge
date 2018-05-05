@@ -11,6 +11,9 @@ public class WeatherEntry {
     private String day;
     private double mxt, mnt, avt, avdp, hrp_tpcpn, pdir, avsp, dir, mxs, skyc, mxr, mn, r_avslp;
 
+    public WeatherEntry() {
+    }
+
     public WeatherEntry(String day, double mxt, double mnt, double avt, double avdp, double hrp_tpcpn, double pdir, double avsp, double dir, double mxs, double skyc, double mxr, double mn, double r_avslp) {
         this.day = day;
         this.mxt = mxt;

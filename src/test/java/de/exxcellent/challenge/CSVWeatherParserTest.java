@@ -16,7 +16,6 @@ public class CSVWeatherParserTest {
     private CSVWeatherParser csvWeatherParser;
 
     private WeatherEntry weatherEntryA;
-
     private WeatherEntry weatherEntryB;
 
     @Before
