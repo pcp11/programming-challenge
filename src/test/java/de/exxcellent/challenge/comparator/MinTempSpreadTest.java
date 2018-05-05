@@ -1,6 +1,5 @@
 package de.exxcellent.challenge.comparator;
 
-import de.exxcellent.challenge.MinTempSpread;
 import de.exxcellent.challenge.model.WeatherEntry;
 import org.junit.Assert;
 import org.junit.Before;

@@ -1,6 +1,7 @@
 package de.exxcellent.challenge;
 
 import de.exxcellent.challenge.comparator.MinGoalDifference;
+import de.exxcellent.challenge.comparator.MinTempSpread;
 import de.exxcellent.challenge.model.FootballEntry;
 import de.exxcellent.challenge.model.WeatherEntry;
 import de.exxcellent.challenge.parser.CSVFootballParser;

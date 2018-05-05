@@ -1,4 +1,4 @@
-package de.exxcellent.challenge;
+package de.exxcellent.challenge.comparator;
 
 import de.exxcellent.challenge.model.WeatherEntry;
 
