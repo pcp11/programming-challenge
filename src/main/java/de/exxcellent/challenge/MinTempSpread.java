@@ -9,8 +9,9 @@ import java.util.Comparator;
  * @since 05.05.18
  */
 public class MinTempSpread implements Comparator<WeatherEntry> {
+
     @Override
     public int compare(WeatherEntry o1, WeatherEntry o2) {
-        return 0;
+        return Double.compare(o2.getMxt() - o2.getMnt(), o1.getMxt() - o1.getMnt());
     }
 }

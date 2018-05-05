@@ -26,9 +26,9 @@ public class MinTempSpreadTest {
 
     @Test
     public void compare() {
-        Assert.assertTrue(minTempSpreadComp.compare(weatherEntryA, weatherEntryB) < 0);
-        weatherEntryA.setMnt(104);
-        Assert.assertTrue(minTempSpreadComp.compare(weatherEntryA, weatherEntryB) > 0);
+        Assert.assertTrue(minTempSpreadComp.compare(weatherEntryB, weatherEntryA) < 0);
+        weatherEntryA.setMxt(104);
+        Assert.assertTrue(minTempSpreadComp.compare(weatherEntryB, weatherEntryA) > 0);
         weatherEntryB.setMnt(51);
         Assert.assertEquals(0, minTempSpreadComp.compare(weatherEntryA, weatherEntryB));
     }
