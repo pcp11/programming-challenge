@@ -1,4 +1,4 @@
-package de.exxcellent.challenge;
+package de.exxcellent.challenge.parser;
 
 import com.opencsv.bean.ColumnPositionMappingStrategy;
 import com.opencsv.bean.CsvToBean;
@@ -14,10 +14,11 @@ import java.util.List;
  * @author pc
  * @since 05.05.18
  */
-public class CSVWeatherParser {
+public class CSVWeatherParser implements FileParser<WeatherEntry> {
 
     private static final String[] CSV_HEADER = {"day","mxt","mnt","avt","avdp","hrp_tpcpn","pdir","avsp","dir","mxs","skyc","mxr","mn","r_avslp"};
 
+    @Override
     public List<WeatherEntry> parseFile(String filePath) {
 
         BufferedReader fileReader = null;

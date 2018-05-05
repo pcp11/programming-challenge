@@ -1,6 +1,7 @@
 package de.exxcellent.challenge;
 
 import de.exxcellent.challenge.model.WeatherEntry;
+import de.exxcellent.challenge.parser.CSVWeatherParser;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,19 +12,19 @@ import org.junit.Test;
  */
 public class FileSelectorTest {
 
-    private FileSelector fileSelector;
+    private FileSelector<WeatherEntry> weatherEntryFileSelector;
 
-    private WeatherEntry result;
+    private WeatherEntry weatherEntry;
 
     @Before
     public void setUp() throws Exception {
-        fileSelector = new FileSelector(App.weatherCSV, new CSVWeatherParser(), new MinTempSpread());
+        weatherEntryFileSelector = new FileSelector<>(App.weatherCSV, new CSVWeatherParser(), new MinTempSpread());
 
-        result = new WeatherEntry("14",61,59,60,55.9,0,60,6.7,80,9,10,93,87,1008.6);
+        weatherEntry = new WeatherEntry("14",61,59,60,55.9,0,60,6.7,80,9,10,93,87,1008.6);
     }
 
     @Test
     public void select() {
-        Assert.assertEquals(result.getDay(), fileSelector.select().getDay());
+        Assert.assertEquals(weatherEntry.getDay(), weatherEntryFileSelector.select().getDay());
     }
 }

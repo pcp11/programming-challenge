@@ -1,6 +1,7 @@
 package de.exxcellent.challenge;
 
 import de.exxcellent.challenge.model.WeatherEntry;
+import de.exxcellent.challenge.parser.CSVWeatherParser;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,6 +1,6 @@
 package de.exxcellent.challenge;
 
-import de.exxcellent.challenge.model.WeatherEntry;
+import de.exxcellent.challenge.parser.FileParser;
 
 import java.util.Comparator;
 import java.util.List;
@@ -9,25 +9,25 @@ import java.util.List;
  * @author pc
  * @since 05.05.18
  */
-public class FileSelector {
+public class FileSelector<T> {
 
     private String filePath;
 
-    private CSVWeatherParser csvWeatherParser;
+    private FileParser<T> fileParser;
 
-    private Comparator<WeatherEntry> comparator;
+    private Comparator<T> comparator;
 
-    public FileSelector(String filePath, CSVWeatherParser csvWeatherParser, Comparator<WeatherEntry> comparator) {
+    public FileSelector(String filePath, FileParser<T> fileParser, Comparator<T> comparator) {
         this.filePath = filePath;
-        this.csvWeatherParser = csvWeatherParser;
+        this.fileParser = fileParser;
         this.comparator = comparator;
     }
 
-    public WeatherEntry select() {
-        List<WeatherEntry> weatherEntries = csvWeatherParser.parseFile(filePath);
-        WeatherEntry max = null;
-        for (int i = 0; i < weatherEntries.size(); ++i) {
-            WeatherEntry current = weatherEntries.get(i);
+    public T select() {
+        List<T> fileEntries = fileParser.parseFile(filePath);
+        T max = null;
+        for (int i = 0; i < fileEntries.size(); ++i) {
+            T current = fileEntries.get(i);
             if (i == 0 || comparator.compare(current, max) > 0) {
                 max = current;
             }
