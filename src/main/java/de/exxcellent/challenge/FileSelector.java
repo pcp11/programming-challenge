@@ -3,6 +3,7 @@ package de.exxcellent.challenge;
 import de.exxcellent.challenge.model.WeatherEntry;
 
 import java.util.Comparator;
+import java.util.List;
 
 /**
  * @author pc
@@ -23,6 +24,14 @@ public class FileSelector {
     }
 
     public WeatherEntry select() {
-        return null;
+        List<WeatherEntry> weatherEntries = csvWeatherParser.parseFile(filePath);
+        WeatherEntry max = null;
+        for (int i = 0; i < weatherEntries.size(); ++i) {
+            WeatherEntry current = weatherEntries.get(i);
+            if (i == 0 || comparator.compare(current, max) > 0) {
+                max = current;
+            }
+        }
+        return max;
     }
 }
