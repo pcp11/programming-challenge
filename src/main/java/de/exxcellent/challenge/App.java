@@ -8,6 +8,8 @@ package de.exxcellent.challenge;
  */
 public final class App {
 
+    public static final String weatherCSV = "./src/main/resources/de/exxcellent/challenge/weather.csv";
+
     public static void main(String... args) {
 
         // Your preparation code …
