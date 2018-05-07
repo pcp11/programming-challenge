@@ -3,7 +3,9 @@ package de.exxcellent.challenge.model;
 import java.util.Objects;
 
 /**
- * @author pc
+ * Provides a representation of weather data.
+ *
+ * @author Patrick Christ
  * @since 05.05.18
  */
 public class WeatherEntry {

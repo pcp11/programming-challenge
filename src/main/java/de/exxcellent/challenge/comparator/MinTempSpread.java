@@ -5,7 +5,10 @@ import de.exxcellent.challenge.model.WeatherEntry;
 import java.util.Comparator;
 
 /**
- * @author pc
+ * Provides a comparison for WeatherEntry objects based on the
+ * minimal difference between highest and lowest temperature.
+ *
+ * @author Patrick Christ
  * @since 05.05.18
  */
 public class MinTempSpread implements Comparator<WeatherEntry> {

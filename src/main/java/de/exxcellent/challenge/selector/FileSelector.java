@@ -6,7 +6,10 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * @author pc
+ * Provides a selector, which receives a List of generic objects from its FileParser attribute
+ * and selects one of these based on its comparator attribute.
+ *
+ * @author Patrick Christ
  * @since 05.05.18
  */
 public class FileSelector<T> {

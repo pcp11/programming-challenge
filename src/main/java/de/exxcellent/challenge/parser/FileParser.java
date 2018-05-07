@@ -3,7 +3,10 @@ package de.exxcellent.challenge.parser;
 import java.util.List;
 
 /**
- * @author pc
+ * Provides a parser, that takes a csv file converting it into a List
+ * of generic objects.
+ *
+ * @author Patrick Christ
  * @since 05.05.18
  */
 public interface FileParser<T> {
