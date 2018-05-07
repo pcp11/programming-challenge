@@ -7,7 +7,7 @@ import de.exxcellent.challenge.model.WeatherEntry;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,12 +21,9 @@ public class CSVWeatherParser implements FileParser<WeatherEntry> {
     @Override
     public List<WeatherEntry> parseFile(String filePath) {
 
-        BufferedReader fileReader = null;
-        List<WeatherEntry> weatherEntries = null;
-        CsvToBean<WeatherEntry> csvToBean;
+        List<WeatherEntry> weatherEntries = new ArrayList<>();
 
-        try {
-            fileReader = new BufferedReader(new FileReader(filePath));
+        try (BufferedReader fileReader = new BufferedReader(new FileReader(filePath))) {
 
             ColumnPositionMappingStrategy<WeatherEntry> mappingStrategy =
                     new ColumnPositionMappingStrategy<>();
@@ -34,24 +31,15 @@ public class CSVWeatherParser implements FileParser<WeatherEntry> {
             mappingStrategy.setType(WeatherEntry.class);
             mappingStrategy.setColumnMapping(CSV_HEADER);
 
-            csvToBean = new CsvToBeanBuilder<WeatherEntry>(fileReader)
+            CsvToBean<WeatherEntry> csvToBean = new CsvToBeanBuilder<WeatherEntry>(fileReader)
                     .withMappingStrategy(mappingStrategy)
                     .withSkipLines(1)
                     .withIgnoreLeadingWhiteSpace(true)
                     .build();
 
-            weatherEntries = csvToBean.parse();
-
+            weatherEntries.addAll(csvToBean.parse());
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            try {
-                if (fileReader != null) {
-                    fileReader.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
         return weatherEntries;
     }

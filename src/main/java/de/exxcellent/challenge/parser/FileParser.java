@@ -8,5 +8,11 @@ import java.util.List;
  */
 public interface FileParser<T> {
 
+    /**
+     * Parses the given file and returns a List containing all available entries.
+     *
+     * @param filePath the file's path
+     * @return List containing all available entries
+     */
     List<T> parseFile(String filePath);
 }

@@ -1,5 +1,6 @@
-package de.exxcellent.challenge;
+package de.exxcellent.challenge.selector;
 
+import de.exxcellent.challenge.App;
 import de.exxcellent.challenge.comparator.MinGoalDifference;
 import de.exxcellent.challenge.comparator.MinTempSpread;
 import de.exxcellent.challenge.model.FootballEntry;

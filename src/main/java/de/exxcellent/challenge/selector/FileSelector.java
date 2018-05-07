@@ -1,4 +1,4 @@
-package de.exxcellent.challenge;
+package de.exxcellent.challenge.selector;
 
 import de.exxcellent.challenge.parser.FileParser;
 
@@ -23,6 +23,12 @@ public class FileSelector<T> {
         this.comparator = comparator;
     }
 
+    /**
+     * Calls fileParser's parseFile method and selects one of the file's entries based
+     * on the comparator attribute.
+     *
+     * @return the selected entry
+     */
     public T select() {
         List<T> fileEntries = fileParser.parseFile(filePath);
         T max = null;
